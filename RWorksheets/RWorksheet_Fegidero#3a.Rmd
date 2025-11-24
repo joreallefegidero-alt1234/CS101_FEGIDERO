@@ -1,0 +1,172 @@
+---
+title: "Rworksheet_Fegidero#3a"
+author: "Jorealle Fegidero"
+date: "2025-10-13"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+## 1
+
+
+
+```{r}
+#A.
+LETTERS[1:11]
+
+```
+
+```{r}
+#B.
+LETTERS[seq(1, 26, by = 2)]
+
+```
+```{r}
+#C.
+LETTERS[c(1, 5, 9, 15, 21)]
+
+```
+
+```{r}
+#D.
+letters[22:26]
+
+```
+
+
+```{r}
+#E.
+letters[15:24]
+
+```
+
+
+
+## 2
+
+```{r}
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+city
+
+```
+
+
+```{r}
+temp <- c(42, 39, 34, 34, 30, 27)
+temp
+
+```
+
+```{r}
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+city
+
+temp <- c(42, 39, 34, 34, 30, 27)
+temp
+
+weather <- data.frame(city, temp)
+weather
+
+names(weather) <- c("City", "Temperature")
+weather
+
+
+## Row 3 and 4
+weather[3:4, ]
+
+## City with the Highest and Lowest temprature
+weather[which.max(weather$Temperature), ]
+weather[which.min(weather$Temperature), ]
+
+```
+
+
+## MATRIX
+
+```{r}
+m <- matrix(c(1:8, 11:14), nrow = 3, ncol = 4)
+m
+
+m * 2
+
+##Displays the content of Row 2
+m[2, ]
+
+##Display columns 3 and 4 in rows 1 and 2
+m[1:2, 3:4]
+
+##Display only columns 2 and 3 from row 3
+m[3, 2:3]
+
+## Displays only column 4
+m[, 4]
+
+
+##Name the rows and columns for the matrix from (b)
+m2 <- m * 2
+rownames(m2) <- c("isa", "dalawa", "tatlo")
+colnames(m2) <- c("uno", "dos", "tres", "quatro")
+m2
+
+##Reshape the original matrix (from a)
+dim(m) <- c(6, 2)
+m
+
+```
+
+
+## ARRAY
+
+```{r}
+values <- rep(c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1), 2)
+
+
+my_array <- array(values, dim = c(2, 4, 3))
+my_array
+
+##How many dimensions does your array have?
+dim(my_array)
+
+## Name the rows, columns, dimensions
+rownames <- c("a", "b")
+colnames <- c("A", "B", "C", "D")
+dimnames(my_array) <- list(rownames, colnames, 
+                           c("1st-Dimensional Array", 
+                             "2nd-Dimensional Array", 
+                             "3rd-Dimensional Array"))
+
+my_array
+
+```
+
+
+
+
+
+
+
